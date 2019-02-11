@@ -11,10 +11,25 @@ const container = document.createElement('div');
 container.setAttribute('class', 'container');
 
 app.appendChild(container);
-container.textContent = "Colin is amazing! :)" 
+var teststring = ["SFU SAT is amazing", "SFU SAT is awesome","SFU SAT is good", "SFU SAT is god"];
+var i = 0;
 
+function sleep(ms)
+{
+  return new Promise(resolve => setTimeout(resolve,ms));
+}
 
+async function demo()
+{
+  while (true)
+  {
+    container.textContent = teststring[i%4];
+    await sleep(2000);
+    i++;  
+  }
+}
 
+demo();
 /*const container = document.createElement('div');
 container.setAttribute('class', 'container');
 
